@@ -1,5 +1,6 @@
 /*
 Complexity: O(n**2)
+Best case: O(n)
 */
 class insertion_sort{
     public static void main(String args[]){
