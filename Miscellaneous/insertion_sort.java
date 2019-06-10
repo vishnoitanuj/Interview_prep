@@ -4,10 +4,12 @@ Best case: O(n)
 */
 class insertion_sort{
     public static void main(String args[]){
-        int arr[] = {5,4,3,1,2};
-        arr = sort(arr);
-        for(int i=0;i<arr.length;i++)
-            System.out.print(arr[i]+" ");
+        int[] arr = new int[5];
+        arr = new int[6];
+        // int arr[] = {5,4,3,1,2};
+        // arr = sort(arr);
+        // for(int i=0;i<arr.length;i++)
+        //     System.out.print(arr[i]+" ");
     }
     public static int[] sort(int a[]){
         for(int i=1;i<a.length;i++){
