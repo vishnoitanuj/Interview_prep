@@ -11,6 +11,22 @@ if time taken by A for input n <= k*f(n)
 >* Worst Case Complexity: O(n^2)
 >* Best Case Complexity: O(n^2)
 
+### Merge Sort
+>* O(nlogn)  --> base is 2
+>* Space Complexity O(n)
+
+### Binary Search
+>* Time Complexity is O(logn)  --> base is 2
+>* Space Complexity in recurive algo is O(logn)
+
+## Bubble Sort
+>* Space Complexity is O(1)
+
+## Space Complexity Analysis
+>* Calculate auxilliary space required.
+>* Max space requirement at any point of time.
+>* Space complexity for finding <strong>nth fibonacci number</strong> using recurion is O(n)
+
 ## Arrays
 >* Whenever an integer array is created, all elements are initialised to 0.
 >* Whenever an boolean array is created, all elements are initialised to false.
