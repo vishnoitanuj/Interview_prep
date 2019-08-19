@@ -1,3 +1,5 @@
+package Hashmap;
+
 import java.util.HashMap;
 import java.util.Scanner;
 public class pairs_with_difference_k {

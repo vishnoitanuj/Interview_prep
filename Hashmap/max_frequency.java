@@ -1,3 +1,5 @@
+package Hashmap;
+
 import java.util.HashMap;
 import java.util.Scanner;
 public class max_frequency {

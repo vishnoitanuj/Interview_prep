@@ -1,3 +1,5 @@
+package Hashmap;
+
 import java.util.ArrayList;
 import java.util.HashMap;;
 class remove_duplicates{

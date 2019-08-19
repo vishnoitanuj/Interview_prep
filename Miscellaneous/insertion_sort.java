@@ -1,3 +1,5 @@
+package Miscellaneous;
+
 /*
 Complexity: O(n**2)
 Best case: O(n)

@@ -1,3 +1,5 @@
+package Patterns;
+
 /*
 N=7
 *

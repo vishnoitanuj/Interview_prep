@@ -1,7 +1,8 @@
+package Hashmap;
+
 import java.util.*;
 
 public class pair_sum_to_zero {
-	public static void PairSum(int[] input, int size) {
 
         public static void main(String args[]) {
             Scanner sc=new Scanner(System.in);

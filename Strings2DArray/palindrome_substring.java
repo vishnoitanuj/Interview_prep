@@ -1,3 +1,5 @@
+package Strings2DArray;
+
 import java.util.Scanner;
 class palindrome_substring{
     public static void main(String args[]){

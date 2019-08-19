@@ -1,3 +1,5 @@
+package Hashmap;
+
 import java.util.*;
 
 public class longest_subset_with_max_10{

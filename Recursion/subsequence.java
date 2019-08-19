@@ -1,5 +1,7 @@
+package Recursion;
+
 import java.util.*;
-public class solution {
+public class subsequence {
     
     public static String findMinSubstringContainingString(String str, String pat){
         int len1 = str.length(); 

@@ -1,3 +1,5 @@
+package Strings2DArray;
+
 import java.util.Scanner;
 class largest_unique_substring{
     public static void main(String args[]){

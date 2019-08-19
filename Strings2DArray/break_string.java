@@ -1,3 +1,6 @@
+package Strings2DArray;
+
+
 import java.util.Scanner;
 
 class break_string{

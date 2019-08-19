@@ -1,3 +1,4 @@
+package Patterns;
 /*
 N=5
 1        1

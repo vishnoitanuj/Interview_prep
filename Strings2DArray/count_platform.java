@@ -1,3 +1,5 @@
+package Strings2DArray;
+
 import java.util.Arrays;
 import java.util.Scanner;
 public class count_platform {

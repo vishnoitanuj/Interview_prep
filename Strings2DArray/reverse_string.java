@@ -1,3 +1,5 @@
+package Strings2DArray;
+
 import java.util.Scanner;
 
 class reverse_string{
