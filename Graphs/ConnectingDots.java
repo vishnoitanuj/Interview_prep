@@ -5,48 +5,43 @@ import java.util.Scanner;
 public class ConnectingDots {
 	
 	boolean visited[][];
-    int a[][]={{-1,0},{1,0},{0,1},{0,-1}};
+    int[] dx= {1,-1,0,0};
+    int[] dy= {0,0,1,-1};
+    int findCycle = 0;
 	
 	int solve(String[] board , int n, int m)
 	{
+		visited=new boolean[n][m];
 		// Write your code here.
-        int f=0;
-        visited=new boolean[n][m];
-//        f=DFS(board,0,1,0,0,board[0].charAt(1),n,m,0);
         for(int i=0;i<n;i++){
             for(int j=0;j<m;j++){
                 if(!visited[i][j]){
-                    f=DFS(board,i,j,board[i].charAt(j),n,m,0);
-                    if(f==1)
-                        return f;
+                    dfs(board,i,j,-1,-1,board[i].charAt(j),n,m);
                 }
             }
         }
-        return f;
+        return findCycle;
 	}	
     
-    private int DFS(String g[],int x2,int y2,char s,int n,int m,int c) {
-        if(c==4)
-            return 1;
-		visited[x2][y2]=true;
-		int i,newx,newy,f=0;
-		for(i=0;i<4;i++) {
-			newx=x2+a[i][0];
-			newy=y2+a[i][1];
-			if(validPoint(newx,newy,n,m) && g[newx].charAt(newy)==s && !visited[newx][newy]) {
-				f=f|DFS(g,newx,newy,s,n,m,c+1);
-			}
-		}
-		visited[x2][y2]=false;
-		return f;
-		
-	}
+    private void dfs(String[] board,int x,int y,int fromX,int fromY,char needColor, int n,int m) {
+    	if(x<0 || x>=n || y<0 || y>=m)
+    		return;
+    	if(board[x].charAt(y)!=needColor)
+    		return;
+    	if(visited[x][y]) {
+    		findCycle=1;
+    		return;
+    	}
+    	visited[x][y]=true;
+    	for(int f=0;f<4;f++) {
+    		int nextX=x+dx[f];
+    		int nextY=y+dy[f];
+    		if(nextX==fromX && nextY==fromY)
+    			continue;
+    		dfs(board,nextX,nextY,x,y,needColor,n,m);
+    	}
+    }
 	
-	private boolean validPoint(int x,int y,int n,int m) {
-		if(x>=0 && y>=0 && x<n && y<m)
-			return true;
-		return false;
-	}
 	
 	public static void main(String[] args) {
 		
