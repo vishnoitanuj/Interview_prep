@@ -37,7 +37,7 @@ public class PalindromicSubstrings {
 	}
 	
 	public static void main(String[] args) {
-		String na="aba"; 
+		String na="ababa"; 
   
         System.out.println(count(na)); 
 	}
