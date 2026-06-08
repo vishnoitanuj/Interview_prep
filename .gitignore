@@ -1,3 +1,6 @@
 */*.class
 *.class
 /bin/
+.DS_Store
+.project
+**/.project/**
