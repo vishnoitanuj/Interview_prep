@@ -1,5 +1,55 @@
 package stripe;
 
+/*
+Problem 3: Catch Me If You Can - Fraud Detection
+Background
+
+Stripe processes billions of dollars worth of transactions every day. Our job is to protect customers and legitimate merchants by detecting and blocking fraudulent transactions. We will build a simplified fraud detection model that marks merchants as fraudulent if too many of their transactions are suspicious. The problem is split into three parts.
+
+Part 1: Count-Based Fraud Detection
+
+Each merchant has a Merchant Consumer Code (MCC) that represents their industry (e.g., retail, airline). Each MCC has an associated fraud threshold (integer > 1) that indicates the maximum allowed number of fraudulent transactions before the merchant is marked as fraudulent.
+
+We are given
+
+A comma-separated list of non-fraudulent codes (e.g., "approved,invalid_pin,expired_card").
+
+A comma-separated list of fraudulent codes (e.g., "do_not_honor,stolen_card,lost_card").
+
+A table of MCCs with their fraud thresholds: MCC,threshold (one per line).
+
+A table of merchants with their MCCs: account_id,MCC.
+
+The minimum number of total transactions we must observe before evaluating a merchant (integer ≥ 0).
+
+A table of charges: CHARGE,charge_id,account_id,amount,code
+
+Output
+
+Return a lexicographically sorted, comma-separated list of fraudulent merchants (by account_id).
+
+Part 2: Percentage-Based Fraud Detection
+
+Count-based thresholds can unfairly mark high-volume merchants as fraudulent. Instead, use a percentage threshold:
+
+Each MCC now has a fraction between 0 and 1 indicating the maximum allowed fraction of fraudulent transactions.
+
+If a merchant’s fraud percentage ≥ threshold, mark them as fraudulent.
+
+Merchants stay fraudulent even if their fraud percentage later decreases.
+
+Only evaluate merchants after seeing at least the minimum number of total transactions.
+
+Inputs remain the same as Part 1, except the MCC table now contains fractions.
+
+Part 3: Dispute Resolution
+
+Sometimes transactions are incorrectly marked as fraudulent. We now support disputes which overturn the fraudulent status of a specific transaction.
+
+Input now may include lines like: DISPUTE,charge_id
+
+When a dispute is present, that transaction is treated as not fraudulent for all calculations. If a merchant was marked fraudulent solely due to disputed transactions, they may return to non-fraudulent status until they cross the threshold again with new transactions.
+*/
 import java.util.*;
 
 public class FraudDetection {
