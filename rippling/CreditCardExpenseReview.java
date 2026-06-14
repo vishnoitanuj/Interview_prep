@@ -86,7 +86,7 @@ class RestaurentLimitExpense extends ExpenseRule {
 
     @Override
     protected Violation evaluateExpense(Expense expense) {
-        if(!this.code().equalsIgnoreCase(expense.expenseType())){
+        if(!"RESTAURENT".equalsIgnoreCase(expense.expenseType())){
             return null;
         }
         if(expense.amount().compareTo(LIMIT)>0){
@@ -108,7 +108,7 @@ class NoAirFairRule extends ExpenseRule {
 
     @Override
     protected Violation evaluateExpense(Expense expense){
-        if(!this.code().equalsIgnoreCase(expense.expenseType())){
+        if(!"AIRFARE".equalsIgnoreCase(expense.expenseType())){
             return null;
         }
         return new Violation("EXPENSE", expense.expenseId(), code(), "HIGH", "Airfare not allowed", expense.amount(), BigDecimal.ZERO);
@@ -125,7 +125,7 @@ class NoEntertainmentRule extends ExpenseRule {
 
     @Override
     protected Violation evaluateExpense(Expense expense){
-        if(!this.code().equalsIgnoreCase(expense.expenseType())){
+        if(!"ENTERTAINMENT".equalsIgnoreCase(expense.expenseType())){
             return null;
         }
         return new Violation("EXPENSE", expense.expenseId(), code(), "HIGH", "Entertainment not allowed", expense.amount(), BigDecimal.ZERO);
@@ -144,7 +144,7 @@ class ExpenseLimitRule extends ExpenseRule {
     @Override
     public Violation evaluateExpense(Expense expense){
         if(expense.amount().compareTo(LIMIT)>0){
-            return new Violation("EXPENSE", expense.expenseId(), code(), "HIGH", "Expense exceeds $259", expense.amount(), LIMIT);
+            return new Violation("EXPENSE", expense.expenseId(), code(), "HIGH", "Expense exceeds $250", expense.amount(), LIMIT);
         }
         return null;
     }
@@ -241,3 +241,25 @@ class TripMealLimitRule extends TripRule {
         return null;
     }
 }
+
+/*
+Current complexity:
+
+Expense Rules:
+O(R * N)
+
+Trip Rules:
+O(T * G)
+
+For:
+
+100 rules
+1M expenses
+
+This becomes expensive.
+
+A follow-up answer:
+
+"For large rule counts I'd move toward a Specification Pattern or 
+compile rules into predicates so we don't repeatedly scan all expenses for every rule."
+*/
