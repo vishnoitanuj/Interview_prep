@@ -2,6 +2,8 @@ package rippling;
 
 import java.util.*;
 
+// Question: https://prachub.com/coding-questions/implement-an-article-voting-tracker
+
 public class ArticleVotingTracker {
     
     public enum VoteType {
