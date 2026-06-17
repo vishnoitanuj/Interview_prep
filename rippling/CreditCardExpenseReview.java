@@ -58,7 +58,7 @@ interface Rule {
 abstract class ExpenseRule implements Rule {
 
     @Override
-    public List<Violation> evaluate(List<Expense> expenses, EvaluationContext contex) {
+    public List<Violation> evaluate(List<Expense> expenses, EvaluationContext context) {
         List<Violation> violations = new ArrayList<>();
 
         for(Expense expense: expenses){
